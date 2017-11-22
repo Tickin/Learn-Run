@@ -1,0 +1,46 @@
+<div>
+    <app-screen></app-screen>
+</div>
+<br>
+<div>
+        <button (click)="vcs()">강의 추가</button>
+</div>        
+<table  matSort (matSortChange)="sortData($event)">
+    <tr>
+        <th mat-sort-header="name">강의명</th>
+        <th mat-sort-header="profName">교수명</th>
+        <th mat-sort-header="fat" *ngIf="isAdmin">버전관리</th>
+        <th mat-sort-header="carbs" *ngIf="!isAdmin && !isUser">수강신청</th>
+        <th mat-sort-header="protein" *ngIf="!isAdmin && isUser">VDI 접근</th>
+        <th mat-sort-header="fat2" *ngIf="isAdmin">삭제</th>
+        
+    </tr>
+
+    <tr *ngFor='let lect of sortedData'>
+        <td style="background-color: #cccccc" (click)="vdi()" >{{lect.name}}</td>
+        <td style="background-color: #cccccc">{{lect.prof.name}}</td>
+        <td *ngIf="isAdmin" style="background-color: #cccccc" > <button (click)="vcs()">버전관리 이동</button></td>
+        <td *ngIf="!isAdmin" style="background-color: #cccccc" > <button (click)="vdi()">VDI 이동</button></td>
+        <td *ngIf="isAdmin" style="background-color: #cccccc" > <button (click)="vcs()">X</button></td>
+        
+    </tr>
+</table>
+<!--  
+<div class="list">
+  <table>
+      <tr>
+          <th>강의명</th>
+          <th>교수명</th>
+          <th *ngIf="isAdmin" >버전관리</th>
+          <th *ngIf="!isAdmin && !isUser" >수강신청</th>
+          <th *ngIf="!isAdmin && isUser" >VDI 접근</th>
+      </tr>
+      <tr *ngFor='let lect of lec'>
+          <td style="background-color: #cccccc">{{lect.name}}</td>
+          <td style="background-color: #cccccc">{{lect.prof.name}}</td>
+          <td *ngIf="isAdmin" style="background-color: #cccccc" > <button (click)="login()">버전관리 이동</button></td>
+          <td *ngIf="!isAdmin" style="background-color: #cccccc" > <button (click)="login()">VDI 이동</button></td>
+      </tr>
+  </table>
+</div>
+-->

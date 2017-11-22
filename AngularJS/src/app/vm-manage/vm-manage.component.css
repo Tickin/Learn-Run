@@ -1,0 +1,31 @@
+table {
+    margin-top:5px;
+  }
+
+  .list {
+    width: 50%; 
+    position:absolute; 
+    left:50%; 
+    margin-left:-47%
+  }
+  tr{
+    border:2px;
+    border-radius:5px;
+    text-align: center;
+    border:1px solid #dddddd;
+    border-collapse:collapse
+     
+  }
+  th{
+    background-color:black;
+    color:white;     
+    width:5%;
+    text-align: center;
+    border:1px solid #dddddd;
+    border-collapse:collapse
+  }
+  td{
+    text-align: center;
+    border:1px solid #dddddd;
+    border-collapse:collapse
+  }

@@ -1,0 +1,8 @@
+<button class="button" *ngIf="!_loginservice._admin.isAdmin" (click)="asd()">전체 강의 목록</button>
+<button class="button" *ngIf="!_loginservice._admin.isAdmin" (click)="user()">학생 강의 목록 확인</button>
+<button class="button" *ngIf="_loginservice._admin.isAdmin" (click)="asd()">자신의 강의 목록</button>
+<button class="button" *ngIf="_loginservice._admin.isAdmin" (click)="login()">볼륨 버전 관리</button>
+<button class="button" *ngIf="!_loginservice._admin.isAdmin" (click)="login()">VDI</button>
+
+
+<router-outlet></router-outlet>

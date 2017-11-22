@@ -1,0 +1,15 @@
+<div>
+<button (click)="backButton()">뒤로</button>
+</div>
+<div>
+    <canvas #versionflow width="1000" height="200"></canvas>
+</div>
+<div *ngIf="selectedNode != undefined">
+    <label>id:     </label><p>{{selectedNode.id}}</p>
+    <label>base:   </label><p>{{selectedNode.base}}</p>
+    <label>status: </label><p>{{selectedNode.status}}</p>
+</div>
+<div>
+    <button>버전 가져오기</button>
+    <button>버전 업데이트</button>
+</div>

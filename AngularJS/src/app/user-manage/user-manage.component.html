@@ -1,0 +1,30 @@
+<div *ngIf="_loginService._admin">
+    <app-screen></app-screen>
+</div>
+<!--<p style="padding-left:20px; font-size:30px">{{_loginService._admin.id}}</p>-->
+<div class="list">
+    <div style="position:absolute; right:0px;">
+    </div>
+    <button (click)="userCreate()">사용자 생성</button>
+    <button (click)="userDelete()">사용자 삭제</button>
+    <br>
+    <table>
+        <tr>
+            <th>사용자 ID</th>
+            <th>사용자 이름</th>
+            <th>접속 상태</th>
+            <th>개인용 VM</th>
+            <th>삭제</th>
+        </tr>
+        <tr *ngFor='let tmpUser of _loginService._admin.users'>
+            <td   [routerLink]="['/vmManage', tmpUser.id]" (click)="setVM(tmpUser)">{{tmpUser.id}}</td>
+            <td>{{tmpUser.name}}</td>
+            <td>{{tmpUser.state}}</td>
+            <td><p *ngFor='let tmpVm of tmpUser.personalVM'>{{tmpVm.name}}</p> </td>
+            <td> <input type='checkbox' [(ngModel)]="tmpUser.isDeleted" value={{tmpUser.id}} placeholder="" /></td>
+        </tr>
+    </table>
+
+
+
+</div>

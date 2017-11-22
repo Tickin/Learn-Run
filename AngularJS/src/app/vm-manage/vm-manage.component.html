@@ -1,0 +1,32 @@
+<div *ngIf="_loginService._admin">
+    <app-screen></app-screen>
+</div>
+<p style="padding-left:20px; font-size:30px">{{_loginService._admin.id}}</p>
+<br>
+<div class="list">
+  <br/>
+  <button (click)="backButton()">뒤로</button>
+  <table>
+    <tr>
+      <th>VM명</th>
+      <th>OS</th>
+      <th>상태</th>
+      <th>CPU(core)</th>
+      <th>MEM(GB)</th>
+      <th>HDD(GB)</th>
+
+    </tr>
+
+
+    <tr *ngFor='let vm of _loginService._user.personalVM'>
+      <td (click)="showVdi()" >{{vm.name}}</td>
+      <td>{{vm.os}}</td>
+      <td>{{vm.state}}</td>
+      <td>{{vm.CPU}}</td>
+      <td>{{vm.MEM}}</td>
+      <td>{{vm.DISK}}</td>
+    </tr>
+
+  </table>
+
+</div>
